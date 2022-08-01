@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap');
 
+:root {
+  --left-bg-color: rgba(87, 84, 234, 0.7);
+  --right-bg-color: rgba(43, 43, 43, 0.8);
+}
+
 * {
   box-sizing: border-box;
   border: solid #5B6DCD 1px;
@@ -10,4 +15,48 @@ body {
   height: 100vh;
   overflow: hidden;
   margin: 0;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #333;
+}
+
+.split {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.split.left {
+  left: 0;
+  background: url('../assets/GOT.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.split.left::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--left-bg-color) 
+}
+
+.split.right{
+  right: 0;
+  background: url('../assets/HOD.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.split.right::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--right-bg-color) 
 }
